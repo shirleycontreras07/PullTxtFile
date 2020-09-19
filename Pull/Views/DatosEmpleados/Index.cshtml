@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Pull.Models.DatosEmpleado>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdEmpresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoRegistro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoIdEmpleado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpleadoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sueldo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SueldoNeto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoSeguridadSocial)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdEmpresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoRegistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoIdEmpleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpleadoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sueldo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SueldoNeto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoSeguridadSocial)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DatosEmpleadoId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DatosEmpleadoId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DatosEmpleadoId })
+        </td>
+    </tr>
+}
+
+</table>
